@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { UserButton, useUser } from "@clerk/nextjs";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
@@ -39,6 +40,13 @@ const Header = () => {
                 </svg>
               </a>
             </div>
+
+            <Link 
+              href="/contact" 
+              className={`hover:text-teal-400 ${pathName === '/contact' ? 'text-teal-400' : 'text-white'}`}
+            >
+              Contact
+            </Link>
 
             <div className="flex items-center gap-4">
               {!user ? (
@@ -97,7 +105,7 @@ const Header = () => {
               )}
 
               <div className="block md:hidden">
-                <button className="rounded  transition  bg-gray-800 text-white hover:text-teal-400">
+                <button className="rounded transition bg-gray-800 text-white hover:text-teal-400">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-5 w-5"
