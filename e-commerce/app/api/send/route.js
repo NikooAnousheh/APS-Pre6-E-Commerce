@@ -9,7 +9,7 @@ export async function POST(req) {
     const data = await resend.emails.send({
       from: "onboarding@resend.dev",
       to: [body.email],
-      subject: "Your Courses Are Ready for Download 🎓",
+      subject: "Your Courses Are Ready!",
       react: EmailTemplate(),
     });
 
